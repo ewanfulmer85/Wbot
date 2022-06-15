@@ -24,8 +24,7 @@ public class MyBot extends PircBot
 	{
 		// If user sends a hello message say hello back and explain
 		// functionality
-		if(message.equals("Hi Wbot") || message.equals("hi Wbot")|| message.equals("Hello Wbot")||
-		   message.equals("hello Wbot"))
+		if(message.toLowerCase().equals("hi wbot") || message.toLowerCase().equals("hello wbot"))
 		{
 			sendMessage("#pircbot", "Hello! I am WBot!");
 			sendMessage("#pircbot", "You can ask me the weather! Format: "
@@ -34,7 +33,7 @@ public class MyBot extends PircBot
 					+ " Formart: define <word> (ex. define dog)");
 		}
 		// If the message contains the word "weather"
-		else if(message.contains("weather")||message.contains("Weather"))
+		else if(message.toLowerCase().contains("weather"))
 		{
 			// Get zipcode as string
 			String zip = getZipCode(message);
@@ -52,7 +51,7 @@ public class MyBot extends PircBot
 			}
 		}
 		// If the user message contains the word "define"
-		else if(message.contains("Define")||message.contains("define"))
+		else if(message.toLowerCase().contains("define))
 		{
 			// Get the word to be defined from message
 			String word = getWord(message);
@@ -65,8 +64,7 @@ public class MyBot extends PircBot
 				e.printStackTrace();
 			}
 		}
-		else if(message.equals("Disconnect Wbot")||
-				message.equals("disconnect Wbot"))
+		else if(message.toLowerCase().equals("disconnect wbot))
 		{
 			this.disconnect();
 		}
